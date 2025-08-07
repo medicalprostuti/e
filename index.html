@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="bn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>English</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap"
+    />
+    <style>
+      body {
+        font-family: "Hind Siliguri", sans-serif;
+        background-color: #f4f7f6;
+        display: flex;
+        justify-content: center;
+        padding-top: 50px;
+        color: #333;
+      }
+
+      .subject-container {
+        width: 90%;
+        max-width: 600px; /* Increased width slightly */
+        background: #ffffff;
+        padding: 25px 30px;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        text-align: center;
+        color: #2c3e50;
+        margin-bottom: 25px;
+      }
+
+      /* --- Dropdown Styling --- */
+      .dropdown {
+        position: relative;
+        margin-bottom: 12px;
+      }
+
+      .dropdown-btn {
+        background: #1b0b58;
+        color: white;
+        padding: 15px 20px;
+        font-size: 16px;
+        font-weight: 500;
+        border: none;
+        cursor: pointer;
+        border-radius: 10px;
+        width: 100%;
+        text-align: left;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+      }
+
+      .dropdown-btn:hover {
+        background-color: #2a1a7a;
+      }
+
+      .dropdown-btn:active {
+        transform: scale(0.99); /* Slight press effect */
+      }
+
+      /* Arrow Icon using a pseudo-element */
+      .dropdown-btn::after {
+        content: "▶";
+        font-size: 12px;
+        transform: rotate(0deg);
+        transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Bouncy effect */
+      }
+
+      /* Rotate arrow when dropdown is active/open */
+      .dropdown-btn.active::after {
+        transform: rotate(90deg);
+      }
+
+      /* --- Dropdown Content & Animation --- */
+      .dropdown-content {
+        background-color: #f9f9f9;
+        /* Hide content by default */
+        max-height: 0;
+        overflow: hidden;
+        margin-top: 5px;
+        border-radius: 10px;
+        box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.05);
+        /* Smooth transition for the slide-down effect */
+        transition: max-height 0.8s ease-in-out; /* Slightly slower for longer lists */
+      }
+
+      /* Class added by JavaScript to show the content */
+      .dropdown-content.show {
+        /* Increased max-height to accommodate 60+ topics.
+       This value should be larger than the height of your longest topic list. */
+        max-height: 5000px;
+      }
+
+      /* Links inside the dropdown */
+      .dropdown-content a {
+        color: #555;
+        padding: 14px 25px;
+        text-decoration: none;
+        display: block;
+        transition: background-color 0.2s ease, padding-left 0.2s ease;
+        border-bottom: 1px solid #e0e0e0;
+      }
+
+      .dropdown-content a:last-child {
+        border-bottom: none;
+      }
+
+      .dropdown-content a:hover {
+        background-color: #e9ecef;
+        padding-left: 30px;
+        color: #2980b9;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="subject-container" id="subject-menu">
+      <h1>ইংরেজি</h1>
+      <!-- The dropdown menu will be dynamically generated here -->
+    </div>
+
+    <script>
+      const chaptersData = [
+        {
+          id: "ch1",
+          title: "Chapter-1: Refined ENGLISH",
+          topics: [
+            {
+              title: "1.1 - Noun and It’s classification",
+              url: "https://medicalprostuti.github.io/e1/",
+            },
+            {
+              title: "1.2 - Gender",
+              url: "https://medicalprostuti.github.io/e2/",
+            },
+            {
+              title: "1.3 - Number",
+              url: "https://medicalprostuti.github.io/e3/",
+            },
+            {
+              title: "1.4 - Syno-anto-A",
+              url: "https://medicalprostuti.github.io/e4/",
+            },
+            {
+              title: "1.5 - Syno-Anto-B",
+              url: "https://medicalprostuti.github.io/e5/",
+            },
+            {
+              title: "1.6 - Pronoun",
+              url: "https://medicalprostuti.github.io/e6/",
+            },
+            {
+              title: "1.7 - Spelling",
+              url: "https://medicalprostuti.github.io/e7/",
+            },
+            {
+              title: "1.8 - Adjective",
+              url: "https://medicalprostuti.github.io/e8/",
+            },
+            {
+              title: "1.9 - Appropriate preposition-A",
+              url: "https://medicalprostuti.github.io/e9/",
+            },
+            {
+              title: "1.10 - Preposition",
+              url: "https://medicalprostuti.github.io/e10/",
+            },
+            {
+              title: "1.11 - Syno-Anto-C",
+              url: "https://medicalprostuti.github.io/e11/",
+            },
+            {
+              title: "1.12 - Adverb",
+              url: "https://medicalprostuti.github.io/e12/",
+            },
+            {
+              title: "1.13 - Same word but different Parts of speech",
+              url: "https://medicalprostuti.github.io/e13/",
+            },
+            {
+              title: "1.14 - Conjunction",
+              url: "https://medicalprostuti.github.io/e14/",
+            },
+            {
+              title: "1.15 - Transformation fo Parts of Speech",
+              url: "https://medicalprostuti.github.io/e15/",
+            },
+            {
+              title: "1.16 - Syno-Anto-D",
+              url: "https://medicalprostuti.github.io/e16/",
+            },
+            {
+              title: "1.17 - Identification of Parts of Speech",
+              url: "https://medicalprostuti.github.io/e17/",
+            },
+            {
+              title: "1.18 - Verb & Its Classification",
+              url: "https://medicalprostuti.github.io/e18/",
+            },
+            {
+              title: "1.19 - Appropriate Preposition-C & D",
+              url: "https://medicalprostuti.github.io/e19/",
+            },
+            {
+              title: "1.20 - Gerund, Participle, and Verbal Noun Questions",
+              url: "https://medicalprostuti.github.io/e20/",
+            },
+            {
+              title: "1.21 - Antonym & Synonym Questions",
+              url: "https://medicalprostuti.github.io/e21/",
+            },
+            {
+              title: "1.22 - Affirmative and Negative Agreement Questions",
+              url: "https://medicalprostuti.github.io/e22/",
+            },
+            {
+              title: "1.23 - Conjunction of Verb Questions",
+              url: "https://medicalprostuti.github.io/e23/",
+            },
+            {
+              title: "1.24 - Antonym & Synonym Questions",
+              url: "https://medicalprostuti.github.io/e24/",
+            },
+            {
+              title: "1.25 - Tense Questions",
+              url: "https://medicalprostuti.github.io/e25/",
+            },
+            {
+              title: "1.26 - Appropriate Preposition (E-G) Questions",
+              url: "https://medicalprostuti.github.io/e26/",
+            },
+            {
+              title: "1.27 - Sentence and Its Classification Questions",
+              url: "https://medicalprostuti.github.io/e27/",
+            },
+            {
+              title: "1.28 - Appropriate Preposition (H-L) Questions",
+              url: "https://medicalprostuti.github.io/e28/",
+            },
+            {
+              title: "1.29 - Sequence of Tense",
+              url: "https://medicalprostuti.github.io/e29/",
+            },
+            {
+              title: "1.30 - antonym-synonym (I-L)",
+              url: "https://medicalprostuti.github.io/e30/",
+            },
+            {
+              title: "1.31 - antonym-synonym (M-P)",
+              url: "https://medicalprostuti.github.io/e31/",
+            },
+            {
+              title: "1.32 - Subject-Verb Agreement",
+              url: "https://medicalprostuti.github.io/e32/",
+            },
+            {
+              title: "1.33 - Conditional Sentences",
+              url: "https://medicalprostuti.github.io/e33/",
+            },
+            {
+              title: "1.34 - Right Form of Verb",
+              url: "https://medicalprostuti.github.io/e34/",
+            },
+            {
+              title: "1.35 - Appropriate Preposition (M-O)",
+              url: "https://medicalprostuti.github.io/e35/",
+            },
+            {
+              title: "1.36 - Synonym-Antonym (Q, R)",
+              url: "https://medicalprostuti.github.io/e36/",
+            },
+            {
+              title: "1.37 - Causative Verb",
+              url: "https://medicalprostuti.github.io/e37/",
+            },
+            {
+              title: "1.38 - Subjunctive Mood",
+              url: "https://medicalprostuti.github.io/e38/",
+            },
+            {
+              title: "1.39 - Narratio",
+              url: "https://medicalprostuti.github.io/e39/",
+            },
+            {
+              title: "1.40 - Appropriate Preposition",
+              url: "https://medicalprostuti.github.io/e40/",
+            },
+            {
+              title: "1.41 - Voice",
+              url: "https://medicalprostuti.github.io/e41/",
+            },
+            {
+              title: "1.42 - Appropriate Preposition (T-Z)",
+              url: "https://medicalprostuti.github.io/e42/",
+            },
+            {
+              title: "1.43 - Group Verb",
+              url: "https://medicalprostuti.github.io/e43/",
+            },
+            {
+              title: "1.44 - Transformation of Sentence",
+              url: "https://medicalprostuti.github.io/e44/",
+            },
+            {
+              title: "1.45 - Synonym and Antonym (S, T, U)",
+              url: "https://medicalprostuti.github.io/e45/",
+            },
+            {
+              title:
+                "1.46 - Transformation of Sentences (according to function)",
+              url: "https://medicalprostuti.github.io/e46/",
+            },
+            {
+              title: "1.47 - Synonyms and Antonyms (V-Z)",
+              url: "https://medicalprostuti.github.io/e47/",
+            },
+            {
+              title: "1.48 - Tag Question",
+              url: "https://medicalprostuti.github.io/e48/",
+            },
+            {
+              title: "1.49 - One Word Substitution",
+              url: "https://medicalprostuti.github.io/e49/",
+            },
+            {
+              title: "1.50 - Proverbs",
+              url: "https://medicalprostuti.github.io/e50/",
+            },
+            {
+              title: "1.51 - Translations",
+              url: "https://medicalprostuti.github.io/e51/",
+            },
+          ],
+        },
+
+        // Add more chapters as needed
+      ];
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const menuContainer = document.getElementById("subject-menu");
+
+        // --- 1. Function to Generate the Menu ---
+        function generateMenu() {
+          // Loop through each chapter in the data object
+          chaptersData.forEach((chapter) => {
+            // Create the main container for the dropdown
+            const dropdownDiv = document.createElement("div");
+            dropdownDiv.className = "dropdown";
+
+            // Create the button for the chapter
+            const button = document.createElement("button");
+            button.className = "dropdown-btn";
+            button.textContent = chapter.title;
+
+            // Create the container for the topics
+            const contentDiv = document.createElement("div");
+            contentDiv.className = "dropdown-content";
+
+            // Loop through the topics for the current chapter
+            chapter.topics.forEach((topic) => {
+              const link = document.createElement("a");
+              link.textContent = topic.title;
+              link.href = topic.url;
+              contentDiv.appendChild(link);
+            });
+
+            // Assemble the parts
+            dropdownDiv.appendChild(button);
+            dropdownDiv.appendChild(contentDiv);
+
+            // Add the completed dropdown to the main container
+            menuContainer.appendChild(dropdownDiv);
+          });
+        }
+
+        // --- 2. Function to Add Event Listeners ---
+        function attachEventListeners() {
+          const allDropdownBtns =
+            menuContainer.querySelectorAll(".dropdown-btn");
+
+          allDropdownBtns.forEach((btn) => {
+            btn.addEventListener("click", function (event) {
+              const currentContent = this.nextElementSibling;
+              const isAlreadyOpen = this.classList.contains("active");
+
+              // First, close all other dropdowns
+              allDropdownBtns.forEach((otherBtn) => {
+                if (otherBtn !== this) {
+                  // Don't close the one we are interacting with yet
+                  otherBtn.classList.remove("active");
+                  otherBtn.nextElementSibling.classList.remove("show");
+                }
+              });
+
+              // Toggle the clicked dropdown
+              this.classList.toggle("active");
+              currentContent.classList.toggle("show");
+
+              event.stopPropagation();
+            });
+          });
+
+          // Optional: Close dropdowns if clicking outside
+          window.addEventListener("click", function (event) {
+            // Check if the click was outside of any dropdown button
+            if (!event.target.matches(".dropdown-btn")) {
+              allDropdownBtns.forEach((btn) => {
+                btn.classList.remove("active");
+                btn.nextElementSibling.classList.remove("show");
+              });
+            }
+          });
+        }
+
+        // --- 3. Initialize the Menu ---
+        generateMenu();
+        attachEventListeners();
+      });
+    </script>
+  </body>
+</html>
