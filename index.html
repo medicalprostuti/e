@@ -17,28 +17,25 @@
         padding-top: 50px;
         color: #333;
       }
-
       .subject-container {
         width: 90%;
-        max-width: 600px; /* Increased width slightly */
+        max-width: 600px;
         background: #ffffff;
         padding: 25px 30px;
         border-radius: 15px;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
       }
-
       h1 {
         text-align: center;
         color: #2c3e50;
         margin-bottom: 25px;
+        font-family: "Hind Siliguri", sans-serif;
       }
-
       /* --- Dropdown Styling --- */
       .dropdown {
         position: relative;
         margin-bottom: 12px;
       }
-
       .dropdown-btn {
         background: #1b0b58;
         color: white;
@@ -55,29 +52,26 @@
         justify-content: space-between;
         align-items: center;
         box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+        font-family: "Hind Siliguri", sans-serif;
+        line-height: 1.5;
       }
-
       .dropdown-btn:hover {
         background-color: #2a1a7a;
       }
-
       .dropdown-btn:active {
-        transform: scale(0.99); /* Slight press effect */
+        transform: scale(0.99);
       }
-
       /* Arrow Icon using a pseudo-element */
       .dropdown-btn::after {
         content: "▶";
         font-size: 12px;
         transform: rotate(0deg);
-        transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Bouncy effect */
+        transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
       }
-
       /* Rotate arrow when dropdown is active/open */
       .dropdown-btn.active::after {
         transform: rotate(90deg);
       }
-
       /* --- Dropdown Content & Animation --- */
       .dropdown-content {
         background-color: #f9f9f9;
@@ -88,16 +82,14 @@
         border-radius: 10px;
         box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.05);
         /* Smooth transition for the slide-down effect */
-        transition: max-height 0.8s ease-in-out; /* Slightly slower for longer lists */
+        transition: max-height 0.8s ease-in-out;
       }
-
       /* Class added by JavaScript to show the content */
       .dropdown-content.show {
         /* Increased max-height to accommodate 60+ topics.
        This value should be larger than the height of your longest topic list. */
         max-height: 5000px;
       }
-
       /* Links inside the dropdown */
       .dropdown-content a {
         color: #555;
@@ -106,12 +98,12 @@
         display: block;
         transition: background-color 0.2s ease, padding-left 0.2s ease;
         border-bottom: 1px solid #e0e0e0;
+        font-family: "Hind Siliguri", sans-serif;
+        line-height: 1.5;
       }
-
       .dropdown-content a:last-child {
         border-bottom: none;
       }
-
       .dropdown-content a:hover {
         background-color: #e9ecef;
         padding-left: 30px;
@@ -122,17 +114,15 @@
   <body>
     <div class="subject-container" id="subject-menu">
       <h1>ইংরেজি</h1>
-      <!-- The dropdown menu will be dynamically generated here -->
-    </div>
-
+      </div>
     <script>
       const chaptersData = [
         {
           id: "ch1",
-          title: "Chapter-1: Refined ENGLISH",
+          title: "Parts of Speech",
           topics: [
             {
-              title: "1.1 - Noun and It’s classification",
+              title: "1.1 - Noun and Its Classification",
               url: "https://medicalprostuti.github.io/e1/",
             },
             {
@@ -144,207 +134,238 @@
               url: "https://medicalprostuti.github.io/e3/",
             },
             {
-              title: "1.4 - Syno-anto-A",
-              url: "https://medicalprostuti.github.io/e4/",
-            },
-            {
-              title: "1.5 - Syno-Anto-B",
-              url: "https://medicalprostuti.github.io/e5/",
-            },
-            {
-              title: "1.6 - Pronoun",
+              title: "1.4 - Pronoun",
               url: "https://medicalprostuti.github.io/e6/",
             },
             {
-              title: "1.7 - Spelling",
-              url: "https://medicalprostuti.github.io/e7/",
-            },
-            {
-              title: "1.8 - Adjective",
+              title: "1.5 - Adjective",
               url: "https://medicalprostuti.github.io/e8/",
             },
             {
-              title: "1.9 - Appropriate preposition-A",
-              url: "https://medicalprostuti.github.io/e9/",
-            },
-            {
-              title: "1.10 - Preposition",
-              url: "https://medicalprostuti.github.io/e10/",
-            },
-            {
-              title: "1.11 - Syno-Anto-C",
-              url: "https://medicalprostuti.github.io/e11/",
-            },
-            {
-              title: "1.12 - Adverb",
+              title: "1.6 - Adverb",
               url: "https://medicalprostuti.github.io/e12/",
             },
             {
-              title: "1.13 - Same word but different Parts of speech",
-              url: "https://medicalprostuti.github.io/e13/",
-            },
-            {
-              title: "1.14 - Conjunction",
+              title: "1.7 - Conjunction",
               url: "https://medicalprostuti.github.io/e14/",
             },
             {
-              title: "1.15 - Transformation fo Parts of Speech",
-              url: "https://medicalprostuti.github.io/e15/",
-            },
-            {
-              title: "1.16 - Syno-Anto-D",
-              url: "https://medicalprostuti.github.io/e16/",
-            },
-            {
-              title: "1.17 - Identification of Parts of Speech",
-              url: "https://medicalprostuti.github.io/e17/",
-            },
-            {
-              title: "1.18 - Verb & Its Classification",
+              title: "1.8 - Verb & Its Classification",
               url: "https://medicalprostuti.github.io/e18/",
             },
             {
-              title: "1.19 - Appropriate Preposition-C & D",
-              url: "https://medicalprostuti.github.io/e19/",
+              title: "1.9 - Same word but different Parts of speech",
+              url: "https://medicalprostuti.github.io/e13/",
             },
             {
-              title: "1.20 - Gerund, Participle, and Verbal Noun Questions",
+              title: "1.10 - Transformation fo Parts of Speech",
+              url: "https://medicalprostuti.github.io/e15/",
+            },
+            {
+              title: "1.11 - Identification of Parts of Speech",
+              url: "https://medicalprostuti.github.io/e17/",
+            },
+          ],
+        },
+        {
+          id: "ch2",
+          title: "Tense and Verb",
+          topics: [
+            {
+              title: "2.1 - Gerund, Participle, and Verbal Noun Questions",
               url: "https://medicalprostuti.github.io/e20/",
             },
             {
-              title: "1.21 - Antonym & Synonym Questions",
-              url: "https://medicalprostuti.github.io/e21/",
-            },
-            {
-              title: "1.22 - Affirmative and Negative Agreement Questions",
-              url: "https://medicalprostuti.github.io/e22/",
-            },
-            {
-              title: "1.23 - Conjunction of Verb Questions",
+              title: "2.2 - Conjunction of Verb Questions",
               url: "https://medicalprostuti.github.io/e23/",
             },
             {
-              title: "1.24 - Antonym & Synonym Questions",
-              url: "https://medicalprostuti.github.io/e24/",
-            },
-            {
-              title: "1.25 - Tense Questions",
+              title: "2.3 - Tense Questions",
               url: "https://medicalprostuti.github.io/e25/",
             },
             {
-              title: "1.26 - Appropriate Preposition (E-G) Questions",
-              url: "https://medicalprostuti.github.io/e26/",
-            },
-            {
-              title: "1.27 - Sentence and Its Classification Questions",
-              url: "https://medicalprostuti.github.io/e27/",
-            },
-            {
-              title: "1.28 - Appropriate Preposition (H-L) Questions",
-              url: "https://medicalprostuti.github.io/e28/",
-            },
-            {
-              title: "1.29 - Sequence of Tense",
+              title: "2.4 - Sequence of Tense",
               url: "https://medicalprostuti.github.io/e29/",
             },
             {
-              title: "1.30 - antonym-synonym (I-L)",
-              url: "https://medicalprostuti.github.io/e30/",
-            },
-            {
-              title: "1.31 - antonym-synonym (M-P)",
-              url: "https://medicalprostuti.github.io/e31/",
-            },
-            {
-              title: "1.32 - Subject-Verb Agreement",
+              title: "2.5 - Subject-Verb Agreement",
               url: "https://medicalprostuti.github.io/e32/",
             },
             {
-              title: "1.33 - Conditional Sentences",
-              url: "https://medicalprostuti.github.io/e33/",
-            },
-            {
-              title: "1.34 - Right Form of Verb",
+              title: "2.6 - Right Form of Verb",
               url: "https://medicalprostuti.github.io/e34/",
             },
             {
-              title: "1.35 - Appropriate Preposition (M-O)",
-              url: "https://medicalprostuti.github.io/e35/",
-            },
-            {
-              title: "1.36 - Synonym-Antonym (Q, R)",
-              url: "https://medicalprostuti.github.io/e36/",
-            },
-            {
-              title: "1.37 - Causative Verb",
+              title: "2.7 - Causative Verb",
               url: "https://medicalprostuti.github.io/e37/",
             },
             {
-              title: "1.38 - Subjunctive Mood",
+              title: "2.8 - Subjunctive Mood",
               url: "https://medicalprostuti.github.io/e38/",
             },
+          ],
+        },
+        {
+          id: "ch3",
+          title: "Sentence & Clauses",
+          topics: [
             {
-              title: "1.39 - Narratio",
-              url: "https://medicalprostuti.github.io/e39/",
+              title: "3.1 - Sentence and Its Classification Questions",
+              url: "https://medicalprostuti.github.io/e27/",
             },
             {
-              title: "1.40 - Appropriate Preposition",
-              url: "https://medicalprostuti.github.io/e40/",
+              title: "3.2 - Conditional Sentences",
+              url: "https://medicalprostuti.github.io/e33/",
             },
             {
-              title: "1.41 - Voice",
-              url: "https://medicalprostuti.github.io/e41/",
-            },
-            {
-              title: "1.42 - Appropriate Preposition (T-Z)",
-              url: "https://medicalprostuti.github.io/e42/",
-            },
-            {
-              title: "1.43 - Group Verb",
-              url: "https://medicalprostuti.github.io/e43/",
-            },
-            {
-              title: "1.44 - Transformation of Sentence",
+              title: "3.3 - Transformation of Sentence",
               url: "https://medicalprostuti.github.io/e44/",
             },
             {
-              title: "1.45 - Synonym and Antonym (S, T, U)",
-              url: "https://medicalprostuti.github.io/e45/",
-            },
-            {
-              title:
-                "1.46 - Transformation of Sentences (according to function)",
+              title: "3.4 - Transformation of Sentences (according to function)",
               url: "https://medicalprostuti.github.io/e46/",
             },
             {
-              title: "1.47 - Synonyms and Antonyms (V-Z)",
-              url: "https://medicalprostuti.github.io/e47/",
-            },
-            {
-              title: "1.48 - Tag Question",
+              title: "3.5 - Tag Question",
               url: "https://medicalprostuti.github.io/e48/",
             },
             {
-              title: "1.49 - One Word Substitution",
-              url: "https://medicalprostuti.github.io/e49/",
+              title: "3.6 - Affirmative and Negative Agreement Questions",
+              url: "https://medicalprostuti.github.io/e22/",
             },
             {
-              title: "1.50 - Proverbs",
-              url: "https://medicalprostuti.github.io/e50/",
+              title: "3.7 - Narratio",
+              url: "https://medicalprostuti.github.io/e39/",
             },
             {
-              title: "1.51 - Translations",
+              title: "3.8 - Voice",
+              url: "https://medicalprostuti.github.io/e41/",
+            },
+          ],
+        },
+        {
+          id: "ch4",
+          title: "Prepositions",
+          topics: [
+            {
+              title: "4.1 - Appropriate preposition-A",
+              url: "https://medicalprostuti.github.io/e9/",
+            },
+            {
+              title: "4.2 - Preposition",
+              url: "https://medicalprostuti.github.io/e10/",
+            },
+            {
+              title: "4.3 - Appropriate Preposition-C & D",
+              url: "https://medicalprostuti.github.io/e19/",
+            },
+            {
+              title: "4.4 - Appropriate Preposition (E-G) Questions",
+              url: "https://medicalprostuti.github.io/e26/",
+            },
+            {
+              title: "4.5 - Appropriate Preposition (H-L) Questions",
+              url: "https://medicalprostuti.github.io/e28/",
+            },
+            {
+              title: "4.6 - Appropriate Preposition (M-O)",
+              url: "https://medicalprostuti.github.io/e35/",
+            },
+            {
+              title: "4.7 - Appropriate Preposition",
+              url: "https://medicalprostuti.github.io/e40/",
+            },
+            {
+              title: "4.8 - Appropriate Preposition (T-Z)",
+              url: "https://medicalprostuti.github.io/e42/",
+            },
+            {
+              title: "4.9 - Group Verb",
+              url: "https://medicalprostuti.github.io/e43/",
+            },
+          ],
+        },
+        {
+          id: "ch5",
+          title: "Synonym and Antonym",
+          topics: [
+            {
+              title: "5.1 - Synonym and Antonym-A",
+              url: "https://medicalprostuti.github.io/e4/",
+            },
+            {
+              title: "5.2 - Synonym and Antonym-B",
+              url: "https://medicalprostuti.github.io/e5/",
+            },
+            {
+              title: "5.3 - Synonym and Antonym-C",
+              url: "https://medicalprostuti.github.io/e11/",
+            },
+            {
+              title: "5.4 - Synonym and Antonym-D",
+              url: "https://medicalprostuti.github.io/e16/",
+            },
+            {
+              title: "5.5 - Synonym and Antonym (E,F)",
+              url: "https://medicalprostuti.github.io/e21/",
+            },
+            {
+              title: "5.6 - Synonym and Antonym (G,H)",
+              url: "https://medicalprostuti.github.io/e24/",
+            },
+            {
+              title: "5.7 - Synonym and Antonym (I-L)",
+              url: "https://medicalprostuti.github.io/e30/",
+            },
+            {
+              title: "5.8 - Synonym and Antonym (M-P)",
+              url: "https://medicalprostuti.github.io/e31/",
+            },
+            {
+              title: "5.9 - Synonym and Antonym (Q, R)",
+              url: "https://medicalprostuti.github.io/e36/",
+            },
+            {
+              title: "5.10 - Synonym and Antonym (S, T, U)",
+              url: "https://medicalprostuti.github.io/e45/",
+            },
+            {
+              title: "5.11 - Synonyms and Antonyms (V-Z)",
+              url: "https://medicalprostuti.github.io/e47/",
+            },
+          ],
+        },
+        {
+          id: "ch6",
+          title: "Translation",
+          topics: [
+            {
+              title: "6.1 - Translations",
               url: "https://medicalprostuti.github.io/e51/",
             },
           ],
         },
-
-        // Add more chapters as needed
+        {
+          id: "ch7",
+          title: "Other Topics",
+          topics: [
+            {
+              title: "7.1 - Spelling",
+              url: "https://medicalprostuti.github.io/e7/",
+            },
+            {
+              title: "7.2 - One Word Substitution",
+              url: "https://medicalprostuti.github.io/e49/",
+            },
+            {
+              title: "7.3 - Proverbs",
+              url: "https://medicalprostuti.github.io/e50/",
+            },
+          ],
+        },
       ];
-
       document.addEventListener("DOMContentLoaded", function () {
         const menuContainer = document.getElementById("subject-menu");
-
         // --- 1. Function to Generate the Menu ---
         function generateMenu() {
           // Loop through each chapter in the data object
@@ -381,8 +402,7 @@
 
         // --- 2. Function to Add Event Listeners ---
         function attachEventListeners() {
-          const allDropdownBtns =
-            menuContainer.querySelectorAll(".dropdown-btn");
+          const allDropdownBtns = menuContainer.querySelectorAll(".dropdown-btn");
 
           allDropdownBtns.forEach((btn) => {
             btn.addEventListener("click", function (event) {
