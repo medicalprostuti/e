@@ -87,7 +87,7 @@
       /* Class added by JavaScript to show the content */
       .dropdown-content.show {
         /* Increased max-height to accommodate 60+ topics.
-       This value should be larger than the height of your longest topic list. */
+        This value should be larger than the height of your longest topic list. */
         max-height: 5000px;
       }
       /* Links inside the dropdown */
@@ -114,7 +114,7 @@
   <body>
     <div class="subject-container" id="subject-menu">
       <h1>ইংরেজি</h1>
-      </div>
+    </div>
     <script>
       const chaptersData = [
         {
@@ -378,16 +378,19 @@
             const button = document.createElement("button");
             button.className = "dropdown-btn";
             button.textContent = chapter.title;
+            button.setAttribute("aria-expanded", "false"); // Add for accessibility
 
             // Create the container for the topics
             const contentDiv = document.createElement("div");
             contentDiv.className = "dropdown-content";
+            contentDiv.setAttribute("role", "menu"); // Add for accessibility
 
             // Loop through the topics for the current chapter
             chapter.topics.forEach((topic) => {
               const link = document.createElement("a");
               link.textContent = topic.title;
               link.href = topic.url;
+              link.setAttribute("role", "menuitem"); // Add for accessibility
               contentDiv.appendChild(link);
             });
 
@@ -402,7 +405,8 @@
 
         // --- 2. Function to Add Event Listeners ---
         function attachEventListeners() {
-          const allDropdownBtns = menuContainer.querySelectorAll(".dropdown-btn");
+          const allDropdownBtns =
+            menuContainer.querySelectorAll(".dropdown-btn");
 
           allDropdownBtns.forEach((btn) => {
             btn.addEventListener("click", function (event) {
@@ -412,15 +416,16 @@
               // First, close all other dropdowns
               allDropdownBtns.forEach((otherBtn) => {
                 if (otherBtn !== this) {
-                  // Don't close the one we are interacting with yet
                   otherBtn.classList.remove("active");
                   otherBtn.nextElementSibling.classList.remove("show");
+                  otherBtn.setAttribute("aria-expanded", "false");
                 }
               });
 
               // Toggle the clicked dropdown
               this.classList.toggle("active");
               currentContent.classList.toggle("show");
+              this.setAttribute("aria-expanded", !isAlreadyOpen);
 
               event.stopPropagation();
             });
@@ -433,6 +438,7 @@
               allDropdownBtns.forEach((btn) => {
                 btn.classList.remove("active");
                 btn.nextElementSibling.classList.remove("show");
+                btn.setAttribute("aria-expanded", "false");
               });
             }
           });
